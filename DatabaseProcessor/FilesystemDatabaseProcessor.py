@@ -14,6 +14,6 @@ class FileSystemDatabase:
 
 
 
-a = FileSystemDatabase
-b = a.generate_file
+a = FileSystemDatabase()
+b = a.generate_file()
 input(b)
