@@ -11,9 +11,9 @@ class MemeExtensionProcessor:
 
     @staticmethod
     def get_type(path):
-        # Get file extension or return None.
         ext = path.split('.')[-1]
         try:
             return MemeExtensionProcessor.extensions[ext]
         except KeyError:
             return None
+
