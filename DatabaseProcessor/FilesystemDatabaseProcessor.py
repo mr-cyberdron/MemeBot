@@ -26,13 +26,13 @@ class FileSystemDatabase:
         # Absolute meme types folder paths.
         dirs = [path for path in os.listdir(meme_dir) if os.path.isdir(os.path.join(meme_dir, path))]
         for dir in dirs:
-            files = os.listdir(os.path.join(meme_dir,dir))
+            files = os.listdir(os.path.join(meme_dir, dir))
             for file in files:
                 # Get meme db short path.
                 delimiters = r'[/,\\]'
-                db_file_path = re.split(delimiters,(meme_dir + file))
+                db_file_path = re.split(delimiters, (meme_dir + file))
                 db_file_path = os.path.join('/', db_file_path[-3], db_file_path[-2], db_file_path[-1])
-                db_file_path = db_file_path.replace("\\","/")
+                db_file_path = db_file_path.replace("\\", "/")
                 paths.append(db_file_path)
 
         return paths
@@ -68,4 +68,5 @@ class FileSystemDatabase:
 
         new_memes_df = pd.DataFrame(data=meme_rows)
         memes_appended_base = pd.concat([meme_csv, new_memes_df], ignore_index=True, axis=0)
-        memes_appended_base.to_csv(csv_path, index = False)
+        # Write appended base to csv file.
+        memes_appended_base.to_csv(csv_path, index=False)
