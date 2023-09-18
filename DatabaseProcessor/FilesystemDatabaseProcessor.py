@@ -22,7 +22,7 @@ class FileSystemDatabase:
         # Get shorty meme paths from folder.
         paths = []
         # Absolute root memes folder path.
-        meme_dir = os.path.join(os.getcwd(), env.local_base_dir)
+        meme_dir = os.path.join(env.root, env.local_base_dir)
         # Absolute meme types folder paths.
         dirs = [path for path in os.listdir(meme_dir) if os.path.isdir(os.path.join(meme_dir, path))]
         for dir in dirs:
